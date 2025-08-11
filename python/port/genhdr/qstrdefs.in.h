@@ -378,6 +378,7 @@ Q(draw_string)
 Q(fill_rect)
 Q(get_pixel)
 Q(set_pixel)
+Q(draw_line)
 
 // Matplotlib QSTRs
 Q(arrow)

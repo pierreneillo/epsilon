@@ -95,3 +95,16 @@ mp_obj_t modkandinsky_fill_rect(size_t n_args, const mp_obj_t *args) {
   KDIonContext::SharedContext->fillRect(rect, color);
   return mp_const_none;
 }
+
+mp_obj_t modkandinsky_draw_line(size_t n_args, const mp_obj_t *args) {
+  mp_int_t x1 = mp_obj_get_int(args[0]);
+  mp_int_t y1 = mp_obj_get_int(args[1]);
+  mp_int_t x2 = mp_obj_get_int(args[2]);
+  mp_int_t y2 = mp_obj_get_int(args[3]);
+  KDColor color = MicroPython::Color::Parse(args[4]);
+  KDColor background = MicroPython::Color::Parse(args[5]);
+  MicroPython::ExecutionEnvironment::currentExecutionEnvironment()
+      ->displaySandbox();
+  KDIonContext::SharedContext->drawAntialiasedLine(static_cast<float>(x1),static_cast<float>(y1),static_cast<float>(x2),static_cast<float>(y2), color, background);
+  return mp_const_none;
+}
