@@ -689,6 +689,9 @@ constexpr ToolboxMessageTree catalogChildren[] = {
                              I18n::Message::PythonDivMod),
     ToolboxMessageTree::Leaf(I18n::Message::PythonCommandDot,
                              I18n::Message::PythonDot),
+    ToolboxMessageTree::Leaf(I18n::Message::PythonCommandDrawLine,
+                             I18n::Message::PythonDrawLine),
+
     ToolboxMessageTree::Leaf(I18n::Message::PythonCommandDrawString,
                              I18n::Message::PythonDrawString),
     ToolboxMessageTree::Leaf(I18n::Message::E, I18n::Message::PythonConstantE,
