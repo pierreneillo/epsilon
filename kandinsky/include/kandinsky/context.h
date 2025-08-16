@@ -4,6 +4,8 @@
 #include <kandinsky/glyph.h>
 #include <kandinsky/rect.h>
 
+#include "kandinsky/point.h"
+
 class KDContext {
  public:
   KDPoint origin() const { return m_origin; }
@@ -50,6 +52,12 @@ class KDContext {
   void fillCircleWithStripes(KDPoint topLeft, KDCoordinate radius,
                              KDColor color, KDColor background,
                              KDCoordinate spacing, bool ascending = true);
+
+  // Polygons
+  void fillPolygon(KDPoint* vertices, size_t n_vertices, KDColor c,
+                   KDColor background);
+  void strokePolygon(KDPoint* vertices, size_t n_vertices, KDColor c,
+                     KDColor background);
 
  protected:
   KDContext(KDPoint origin, KDRect clippingRect)
