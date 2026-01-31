@@ -113,19 +113,18 @@ mp_obj_t modkandinsky_draw_line(size_t n_args, const mp_obj_t *args) {
 }
 
 
-mp_obj_t modkandinsky_fill_polygon(const mp_obj_t vertices, mp_obj_t c, mp_obj_t background){
-  mp_obj_list_t *list = MP_OBJ_TO_PTR(vertices);
+mp_obj_t modkandinsky_fill_polygon(const mp_obj_t vertices, mp_obj_t c){
+  mp_obj_list_t *list = (mp_obj_list_t*)MP_OBJ_TO_PTR(vertices);
   size_t n_vertices = list->len;
   KDPoint* c_vertices = (KDPoint*)m_new(KDPoint,n_vertices);
-  for (int i = 0; i < n_vertices; i++){
-    mp_obj_tuple_t t = MP_OBJ_TO_PTR(list->items[i]);
+  for (size_t i = 0; i < n_vertices; i++){
+    mp_obj_tuple_t* t = (mp_obj_tuple_t*)MP_OBJ_TO_PTR(list->items[i]);
     KDCoordinate x = mp_obj_get_int(t->items[0]);
     KDCoordinate y = mp_obj_get_int(t->items[1]);
     c_vertices[i] = KDPoint(x,y);
   }
   KDColor c_c = MicroPython::Color::Parse(c);
-  KDColor c_background = MicroPython::Color::Parse(background);
   MicroPython::ExecutionEnvironment::currentExecutionEnvironment()->displaySandbox();
-  KDIonContext::SharedContext->fillPolygon(c_vertices,n_vertices,c_c,c_background);
+  KDIonContext::SharedContext->fillPolygon(c_vertices,n_vertices,c_c);
   return mp_const_none;
 }

@@ -54,8 +54,7 @@ class KDContext {
                              KDCoordinate spacing, bool ascending = true);
 
   // Polygons
-  void fillPolygon(KDPoint* vertices, size_t n_vertices, KDColor c,
-                   KDColor background);
+  void fillPolygon(KDPoint* vertices, size_t n_vertices, KDColor c);
   void strokePolygon(KDPoint* vertices, size_t n_vertices, KDColor c,
                      KDColor background);
 

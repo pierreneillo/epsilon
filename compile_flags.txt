@@ -1,0 +1,14 @@
+-xc++
+-std=c++17
+-I.
+-I./eadk/include
+-I./escher/include
+-I./ion/include
+-I./liba/include
+-I./libaxx/include
+-I./libaxx/include/external/libcxx/include
+-I./kandinsky/include
+-I./omg/include
+-I./poincare/include
+-I./python/port/mod/include
+-I./quiz/include

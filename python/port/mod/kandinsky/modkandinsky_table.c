@@ -6,7 +6,7 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_3(modkandinsky_set_pixel_obj, modkandinsky_set_pi
 STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(modkandinsky_draw_string_obj, 3, 5, modkandinsky_draw_string);
 STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(modkandinsky_fill_rect_obj, 5, 5, modkandinsky_fill_rect);
 STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(modkandinsky_draw_line_obj, 6,6, modkandinsky_draw_line);
-STATIC MP_DEFINE_CONST_FUN_OBJ_3(modkandinsky_fill_polygon_obj,modkandinsky_fill_polygon);
+STATIC MP_DEFINE_CONST_FUN_OBJ_2(modkandinsky_fill_polygon_obj,modkandinsky_fill_polygon);
 
 STATIC const mp_rom_map_elem_t modkandinsky_module_globals_table[] = {
   { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_kandinsky) },
